@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Cookie Pulse, a lightweight Cookie Chain wallet and network capability demo." />
+    <title>Cookie Pulse</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="./" aria-label="Cookie Pulse home">
+        <span class="brand-mark" aria-hidden="true">CP</span>
+        <span>Cookie Pulse</span>
+      </a>
+      <div class="network-pill"><span class="status-dot"></span> Cookie Chain</div>
+    </header>
+
+    <main class="shell">
+      <section class="intro" aria-labelledby="page-title">
+        <div>
+          <p class="eyebrow">On-chain workspace</p>
+          <h1 id="page-title">A clear view of your Cookie Chain session.</h1>
+          <p class="lede">Connect a compatible wallet, inspect live network signals, and prepare an auditable memo transaction without hidden signing.</p>
+        </div>
+        <button class="button button-primary" id="connectButton" type="button">Connect wallet</button>
+      </section>
+
+      <section class="notice" aria-live="polite">
+        <span class="notice-icon" aria-hidden="true">i</span>
+        <p id="sessionMessage">No wallet connected. Network readings remain available without signing.</p>
+      </section>
+
+      <section class="grid" aria-label="Cookie Chain overview">
+        <article class="panel network-panel">
+          <div class="panel-heading">
+            <div>
+              <p class="eyebrow">Live network</p>
+              <h2>Chain health</h2>
+            </div>
+            <button class="button button-quiet" id="refreshButton" type="button" title="Refresh network readings">Refresh</button>
+          </div>
+          <div class="metric-grid">
+            <div class="metric"><span>Health</span><strong id="healthValue">Waiting</strong></div>
+            <div class="metric"><span>Current slot</span><strong id="slotValue">-</strong></div>
+            <div class="metric"><span>Epoch</span><strong id="epochValue">-</strong></div>
+            <div class="metric"><span>Wallet balance</span><strong id="balanceValue">-</strong></div>
+          </div>
+          <p class="updated" id="updatedValue">Not checked yet</p>
+        </article>
+
+        <article class="panel wallet-panel">
+          <div class="panel-heading">
+            <div>
+              <p class="eyebrow">Wallet session</p>
+              <h2 id="walletLabel">Not connected</h2>
+            </div>
+            <span class="wallet-state" id="walletState">Read only</span>
+          </div>
+          <code class="address" id="walletAddress">Connect a wallet to show its public address.</code>
+          <div class="wallet-actions">
+            <button class="button button-secondary" id="prepareButton" type="button" disabled>Prepare memo</button>
+            <button class="button button-danger" id="sendButton" type="button" disabled>Sign and send</button>
+          </div>
+          <label class="consent"><input id="consentCheckbox" type="checkbox" disabled /> <span>I understand this may spend a network fee.</span></label>
+          <p class="small-note">Signing is always initiated by the connected wallet. This demo never requests a seed phrase or private key.</p>
+        </article>
+      </section>
+
+      <section class="panel activity-panel" aria-labelledby="activity-title">
+        <div class="panel-heading">
+          <div>
+            <p class="eyebrow">Session log</p>
+            <h2 id="activity-title">Activity</h2>
+          </div>
+          <span class="log-count" id="logCount">0 events</span>
+        </div>
+        <ol class="activity-list" id="activityList">
+          <li class="empty-state">Connect a wallet or refresh the network to begin.</li>
+        </ol>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <span>Cookie Pulse local prototype</span>
+      <a href="README.md">Build notes</a>
+    </footer>
+
+    <script src="https://unpkg.com/@solana/web3.js@1.98.4/lib/index.iife.min.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>

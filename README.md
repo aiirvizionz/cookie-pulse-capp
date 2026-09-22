@@ -20,7 +20,7 @@ Open `http://localhost:4173/` and use a compatible wallet. No seed phrase or pri
 
 ## Important status
 
-This is a local prototype only. It has not been deployed to Cookie Chain, published to GitHub, submitted to Superteam Earn, or connected to a project-owned SSO/social identity. Those external steps require an authorized account and a verified deployment environment.
+The prototype is publicly deployed at https://aiirvizionz.github.io/cookie-pulse-capp/ and published at https://github.com/aiirvizionz/cookie-pulse-capp. It has not been submitted to Superteam Earn or connected to a project-owned SSO/social identity. Those final external steps require an authorized account and a verified submission identity.
 
 ## Dependencies
 
